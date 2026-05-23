@@ -1,0 +1,478 @@
+:root {
+  --heading-font: "PT Sans", sans-serif;
+  --black: #000;
+  --white: #fff;
+  --primary-color: #b80257;
+  --secondary-color: #783df0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Source Sans 3", sans-serif;
+  line-height: 1.3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input,
+button,
+textarea,
+select {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Header Wrapper  */
+
+.header-wrapper {
+  width: 100%;
+  min-height: 496px;
+  background-image: url(../img/banner.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header-wrapper .inner {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  min-height: inherit;
+}
+
+.container {
+  max-width: 1170px;
+  min-height: 100px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  gap: 10px;
+}
+.header-content a {
+  text-decoration: none;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.header .nav {
+  display: flex;
+}
+
+.nav a {
+  display: inline-block;
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  letter-spacing: 1.1px;
+  padding: 20px;
+}
+
+.action-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.action-btn {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+h1.heading {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.breadcrumb {
+  display: flex;
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  color: #fffc;
+}
+
+.breadcrumb li + li::before {
+  content: "/ ";
+  color: #fffc;
+  padding: 0 5px;
+}
+/* End header wrapper */
+
+/* Start main */
+.main {
+  margin-top: 110px;
+}
+.main .inner {
+  display: flex;
+  gap: 30px;
+}
+/* Start sidebar */
+.sidebar {
+  width: 270px;
+  /* padding: 0 15px; */
+  /* background: #f5f5f5; */
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  height: 43px;
+  border: 1px solid #00000017;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.search-input {
+  flex-grow: 1;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+}
+
+.search-input:not(:placeholder-shown) + .search-btn {
+  color: #333;
+}
+
+.search-btn {
+  padding: 0 20px;
+  align-self: stretch;
+  color: #00000080;
+}
+
+.menu-title {
+  margin-top: 30px;
+  color: #222;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.menu {
+  margin-top: 20px;
+  border: 1px solid #0000000d;
+}
+/* li + li là tính từ phần tử thứ hai trở đi 
+nếu k muốn thì dùng li last child để xóa */
+.menu li + li {
+  border-top: 1px solid #0000000d;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  height: 40px;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+.menu a:hover {
+  color: var(--secondary-color);
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+/* Topics */
+.topics {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.topics a {
+  text-decoration: none;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  padding: 0 14px;
+}
+
+.topics .active a,
+.topics a:hover {
+  background: var(--secondary-color);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+/* course list */
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  margin-top: 60px;
+  /* thừa mgl ở con thì lấy cái cha trừ đi  */
+  margin-left: -30px;
+}
+
+.course-item {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  margin-left: 30px;
+  width: calc(33.33% - 30px);
+  /* background: orange; */
+}
+.course-item h3:hover {
+  color: var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+.course-item .thumb:hover {
+  transform: scale(1.1);
+}
+.course-item .thumb-wrapper {
+  display: block;
+  aspect-ratio: 1 / 0.8;
+  overflow: hidden;
+}
+
+.course-item .thumb {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.course-item .info {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.course-item .title {
+  font-size: 1.8rem;
+  color: #464646;
+  text-decoration: none;
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* giới hạn 2 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.course-item .title a {
+  text-decoration: none;
+}
+.course-item .desc {
+  margin: 20px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* giới hạn 3 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.course-item .bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0009;
+  margin-top: auto;
+}
+
+.course-item .bottom div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-item .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.course-item .course-btn {
+  min-width: 66px;
+  height: 32px;
+  color: var(--white);
+  border-radius: 30px;
+  padding: 0 4px;
+  text-decoration: none;
+  line-height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.course-item .course-btn:hover {
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+.course-item .course-btn--free {
+  background: var(--secondary-color);
+}
+.course-item .course-btn--paid {
+  background: var(--primary-color);
+}
+
+/* Phân trang */
+.pagination-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+}
+
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+  min-width: 29px;
+  height: 29px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.pagination-btn-number:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+.pagination-btn-active {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.pagination-btn-text {
+  padding: 0 14px;
+  border-color: var(--secondary-color);
+  color: var(--white);
+  background: var(--secondary-color);
+}
+
+/* footer */
+.course-footer {
+  /* display: flex; */
+  background: #151515;
+  padding: 80px 0 160px 0;
+  margin-top: 100px;
+  width: 100%;
+  gap: 30px;
+}
+.course-footer-list {
+  display: flex;
+  max-width: 1170px;
+  margin: 0 auto;
+  color: var(--white);
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.course-footer-list p {
+  font-size: 14px;
+}
+.course-footer-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 300px;
+  padding: 0 15px;
+}
+.course-footer-logo img {
+  width: 110px;
+  height: 38px;
+}
+.course-footer-list .app ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.course-footer ul li,
+.course-footer p {
+  color: rgb(255 255 254 / 60%);
+}
+.course-footer-column {
+  display: flex;
+}
+.course-footer-menu {
+  min-width: 160px;
+}
+.course-footer-menu li {
+  padding-top: 5px;
+  font-size: 1.5rem;
+}
+.course-footer-menu h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0 25px 0;
+  color: #fff;
+}
+
+.course-footer-contact h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0 25px 0;
+  color: #fff;
+}
+.course-footer-contact .footer-form {
+  width: 100%;
+  height: 40px;
+  background: #272727;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  margin: 25px 0 10px 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+.course-footer-contact .footer-btn {
+  color: var(--white);
+  background: var(--primary-color);
+  width: 95px;
+  line-height: 40px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.course-footer-contact .footer-btn:hover {
+  color: var(--primary-color);
+  background: var(--white);
+  transition: all 0.5s ease;
+}
