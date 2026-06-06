@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        background: orange;
+      }
+      h2 {
+        /* position: relative;
+        /* Cách bên trái 50px */
+        /* left: 50px;
+        top: 30px; */
+        background: green;
+      }
+      h3 {
+        /* position: relative;
+        z-index: 1; */
+        background: violet;
+      }
+
+      .box {
+        position: relative;
+        min-height: 200px;
+        background: orange;
+      }
+
+      .child {
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        background: green;
+      }
+    </style>
+    <!-- 
+     1.Nó phụ thuộc vào cái gì
+        -Relative  (tương đối) : Mốc tính từ tọa độ ban đầu của nó
+        -Absolute : 
+            - Mốc tính từ phần tử cha gần nhất có position khác static(mặc định)
+            - Kích thước phụ thuộc vào phần tử cha
+        -Fixed : Mốc tính từ viewport 
+        -Stiky : Ban đầu phần tử hoạt động như relative
+                 nhưng khi scroll tới một vị trí nào đó 
+                 thì nó sẽ dính lại (stick) giống fixed.
+     2.Có được định vị không () 
+        -Relative : có
+        -Absolute : không 
+        -Fixed : không
+     top, right, bottom, left, z-index, inset
+     +) z-index: là sự ưu tiên về lớp hiển thị; số to hơn thì hiển thị trước
+     
+     1. transition-property: Xác định thuộc tính nào sẽ animate 
+     2. transition-duration : Thời gian chuyển động
+     3. transition-timing-function : Quy định tốc độ chuyển động
+     4. transition-delay : Độ trễ trước khi animation chạy.
+*/
+
+Transform
+-transform-origin:left, right, top, bottom ...: chọn gốc của phần tử
+- translate:- di chuyển phần tử 
+            - transform: translate(x, y)
+            - transform: translateX(20px);
+            - transform: translateY(20px);
+
+- scale:   -  phóng to / thu nhỏ 
+            - transform: scale(1.5);
+            - transform: scale(0.8);
+
+- rotate:  - xoay phần tử 
+            - transform: rotate(45deg);
+Chú ý : khi dùng rotate thì sẽ làm hỏng fixed
+
+- skew:    - làm nghiêng / làm méo phần tử 
+            - transform: skewX(20deg);
+            - transform: skewY(20deg);
+            -->
+
+    /* transition: property duration timing-function delay;
+  </head>
+  <body>
+    <!-- <h1 style="color: aqua">Hello h1</h1>
+    <h2>Hello h2</h2>
+    <h3>Hello h3</h3> -->
+    <div class="box">
+      <div class="box-2">
+        <div class="child">Item</div>
+      </div>
+    </div>
+  </body>
+</html>
